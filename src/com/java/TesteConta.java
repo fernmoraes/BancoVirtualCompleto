@@ -4,28 +4,20 @@ public class TesteConta {
 
     public static void main(String[] args) {
 
-        Conta contaCorrente = new Conta(); //Foi criado o objeto a partir da classe Conta com o nome contaCorrente
-        Conta contaPoupanca = new Conta();
-        Conta contaInvestimento = new Conta();
+        Conta cc = new Conta(); // Variável de referência da classe Conta
+        cc.saldo = 50.0;
+        cc.agencia = 123;
+        cc.numero = 654;
 
-        contaCorrente.numero = 11;
-        contaCorrente.saldo = 20.5;
-        contaCorrente.cliente.nome = "Fernando"; //foi definido o nome do objeto cliente que tem o acesso a classe DadosCliente
-        contaCorrente.cliente.idade = 20;
+        cc.depositar(1000);
 
-        contaPoupanca.numero = 22;
-        contaPoupanca.saldo = 30;
-        contaPoupanca.cliente.nome = "Jose";
-        contaPoupanca.cliente.idade = 19;
+        System.out.println(cc.verificarSaldo());
 
-        contaInvestimento.numero = 33;
-        contaInvestimento.saldo = 40;
-        contaInvestimento.cliente.nome = "Maria";
-        contaInvestimento.cliente.idade = 25;
+        Conta poupanca = new Conta(111, 222, 1000);
+        poupanca.retirar(50);
 
-        System.out.println(contaCorrente.numero);
-        System.out.println(contaCorrente.saldo);
-        System.out.println(contaCorrente.cliente.nome);
-        System.out.println(contaCorrente.cliente.idade);
+        System.out.println(poupanca.verificarSaldo());
+
+
     }
 }
