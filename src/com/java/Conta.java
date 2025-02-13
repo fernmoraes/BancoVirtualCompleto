@@ -11,15 +11,19 @@ public class Conta implements Serializable {
     private int agencia;
     private int numero;
     private double saldo;
+    private String nome;
+    private int senha;
 
     public Conta(){ //Construtor padrão
 
     }
 
-    public Conta(int agencia, int numero, double saldo){ //Construtor com Parâmetros
+    public Conta(int agencia, int numero, double saldo, String nome, int senha){ //Construtor com Parâmetros
         this.agencia = agencia;
         this.numero = numero;
         this.saldo = saldo;
+        this.nome = nome;
+        this.senha = senha;
     }
 
     public int getAgencia() {
@@ -38,6 +42,26 @@ public class Conta implements Serializable {
         this.numero = numero;
     }
 
+    public double getSaldo(){ //Metodo para Verificar, retorna saldo
+        return this.saldo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getSenha() {
+        return senha;
+    }
+
+    public void setSenha(int senha) {
+        this.senha = senha;
+    }
+
     public void depositar(double valor){ //Metodo para Deposita, não retorna
         this.saldo += valor;
     }
@@ -46,7 +70,4 @@ public class Conta implements Serializable {
         this.saldo -= valor;
     }
 
-    public double getSaldo(){ //Metodo para Verificar, retorna saldo
-        return this.saldo;
-    }
 }
